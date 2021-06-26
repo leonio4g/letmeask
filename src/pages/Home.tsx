@@ -8,12 +8,14 @@ import {Button} from '../components/Button';
 
 import '../styles/auth.scss';
 import { database } from '../services/firebase';
+import { useTheme } from '../hooks/useTheme';
 
 export function Home() {
 
     const history = useHistory();
     const { user, signInWithGoogle } = useAuth();
     const [ roomCode, setRoomCode ] = useState('');
+    const { theme, toggleTheme } = useTheme();
 
     async function handleCreateRoom() {
         if (!user) {
@@ -44,14 +46,17 @@ export function Home() {
     }
 
     return (
-        <div id="page-auth" >
+        <div id="page-auth" className={theme} >
             <aside>
+                
                 <img src={illustrationImg} alt="Ilustração simbolixando perguntas e respostas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
                 <p>Tire as dúvidas da sua audiencia em tempo-real</p>
             </aside>
             <main>
+                
                 <div className="main-content">
+                    
                     <img src={logoImg} alt="Letmeask" />
                     <button onClick={handleCreateRoom} className="create-room" >
                         <img src={googleIconImg} alt="Logo do google" />
@@ -69,7 +74,9 @@ export function Home() {
 
                     </form>
                 </div>
+                
             </main>
+            <button className={theme} type="button" onClick={toggleTheme} >Tema  {theme}</button>
         </div>
     )
 }

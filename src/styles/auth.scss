@@ -3,6 +3,38 @@
     align-items: stretch;
     height: 100vh;
 
+    
+    &.dark {
+        background: #333;
+      }
+
+     &.dark > button {
+          background: #fefefe;
+          color: #333;
+          border: 0;
+          padding: 0 10px ;
+          border-radius: 8px;
+          height: 25px;
+          margin-top: 16px;
+          margin-right: 16px;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+      }
+      > button {
+        background: #333;
+        color: #fff;
+        border: 0;
+        padding: 0 10px ;
+        border-radius: 8px;
+        height: 25px;
+        margin-top: 16px;
+        margin-right: 16px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
     aside {
         flex: 6;
 
