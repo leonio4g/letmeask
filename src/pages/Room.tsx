@@ -122,6 +122,7 @@ export function Room() {
             )
           })}
         </div>
+        <button  >Tema</button>
       </main>
     </div>
   )
